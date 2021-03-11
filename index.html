@@ -400,7 +400,7 @@ document.getElementById("output_message").innerHTML = input_message
        if ( month < 10 ) month = "0" + month;
        if ( year < 10 ) year = "0" + year;
        var url = location.search;
-       var str = '<img src="' + "https://s.yimg.jp/images/yjtop/hazard/coronavirus/2021/infected/pc" + month + day + '_01.png" width="300" onerror="imgError(this);">';
+       var str = '<img src="' + "https://s.yimg.jp/images/yjtop/hazard/coronavirus/2021/infected/pc" + month + day + '_1.png" width="300" onerror="imgError(this);">';
        document.getElementById('kansensha').innerHTML = str ;
  }
  </script>
@@ -416,7 +416,7 @@ document.getElementById("output_message").innerHTML = input_message
        if ( month < 10 ) month = "0" + month;
        if ( year < 10 ) year = "0" + year;
     image.onerror = "";
-    image.src = "https://s.yimg.jp/images/yjtop/hazard/coronavirus/2021/infected/pc" + month + day + "_01.png"; //置き換えたい画像のURL
+    image.src = "https://s.yimg.jp/images/yjtop/hazard/coronavirus/2021/infected/pc" + month + day + "_1.png"; //置き換えたい画像のURL
     return true;
 }
  </script>
