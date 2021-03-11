@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <style>
+    .search {
+    float: right;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    z-index: 3;
+}
+#kekka{
+    margin-left: auto;
+    width:98%;
+    margin-right: auto;
+    z-index: 0;
+}
+.ad-bottom {
+    z-index: 4;
+}
+    </style>
+    <script>
+        var params = (new URL(document.location)).searchParams;
+        var qs = params.get('q');
+        if (qs = 電卓) {
+            document.getElementById('emphasis-snippet').innerHTML = '<iframe src="https://9oyfubevlicuvwtvvftdtq-on.drv.tw/js/parts/calculator.html">'
+        }
+        function search_by_google() {
+              var params = (new URL(document.location)).searchParams;
+              var url = params.get('q');
+              window.location.href = 'https://www.google.co.jp/search?q=' + url;
+              }
+        function search_by_bing() {
+              var params = (new URL(document.location)).searchParams;
+              var url = params.get('q');
+              open( "https://www.bing.com/search?q=" + url, "_blank") ;
+              }
+      </script>
+<link rel="shortcut icon" href="./js-search.ico">
+<link rel="apple-touch-icon" href="./apple-touch-icon128.png" sizes="128x128">
+<link rel="icon" type="image/png" href="./images/android-touch-icon.png" sizes="128x128">
+<script>
+    window.onload = function(){
+        var params = (new URL(document.location)).searchParams;
+        var url = params.get('q');
+        document.getElementById('icon-ad-button').innerHTML = '<a href="https://yujuhure.wixsite.com/myjs-search"><img src="https://static.wixstatic.com/media/712666_6fc6fc9f91664d42bdefbe805a787e1e~mv2.png" width="200"></a><iframe src="https://9oyfubevlicuvwtvvftdtq-on.drv.tw/js/parts/s-ad-block.html" width="500px" height="60px" frameborder="0"></iframe><a href="https://www.google.co.jp/search?q=' + url + '"><img src="https://static.wixstatic.com/media/712666_562b147e99e640cf8117eb84a7db6df8~mv2.png" width="90px" alt="google" class="search"></a><a href="https://www.bing.com/search?q=' + url + '"><img src="https://static.wixstatic.com/media/712666_f22d86805af64142ae2aa77fe3862ea1~mv2.png" width="90px" alt="bing" class="search"></a>' ;
+        /* document.getElementById('bing-search').innerHTML = '<a href="https://www.bing.com/search?q=' + url + '"><img src="https://static.wixstatic.com/media/712666_f22d86805af64142ae2aa77fe3862ea1~mv2.png" width="90px" alt="bing" class="search"></a>' ; */
+      }
+</script>
+</script>
+</head>
+<body>
+    <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/na.js"></script>
+    <!-- 
+    <div id="headerArea">
+        <a href="https://yujuhure.wixsite.com/myjs-search">
+            <img src="https://static.wixstatic.com/media/712666_6fc6fc9f91664d42bdefbe805a787e1e~mv2.png" width="200">
+        </a>
+        <script src="https://adm.shinobi.jp/s/b21bd376364f694baff4cddf640202dc"></script> -->
+        
+    <p id="icon-ad-button">
+    </p>
+    <!-- <div id="google-search">
+    </div>
+    <div id="bing-search">
+    </div> -->
+    <!-- <input type="image" src="https://static.wixstatic.com/media/712666_562b147e99e640cf8117eb84a7db6df8~mv2.png" alt="google" onclick="search_by_google()" width="90" class="search">
+    <input type="image" src="https://static.wixstatic.com/media/712666_f22d86805af64142ae2aa77fe3862ea1~mv2.png" alt="google" onclick="search_by_bing()" width="90" class="search"> -->
+    <div class="s-box">
+        <script async src="https://cse.google.com/cse.js?cx=0e4b8b0f23a68692a"></script>
+    <div class="gcse-searchbox-only"></div>
+    </div>  
+</div>
+
+        <!-- <form id="form1" action="#">
+            <input type="text" id="input_message" value=""  onKeyUp="alertValue(this)" >
+            <input type="image" src="https://static.wixstatic.com/media/712666_6c958164fbc541bab34ab4cbb36ac87f~mv2.png" alt="検索" onclick="func1()" width="18">
+            
+          </form> -->
+    
+    <!--       <script language="javascript" type="text/javascript">
+          function func1() {
+            var input_message = document.getElementById("input_message").value;
+            open( "https://9oyfubevlicuvwtvvftdtq-on.drv.tw/ad/search.html?q=" + input_message ) ;
+        
+        document.getElementById("output_message").innerHTML = input_message
+          }
+          </script> -->
+<div id="kekka">
+<div id="emphasis-snippet"></div>
+    <script async src="https://cse.google.com/cse.js?cx=0e4b8b0f23a68692a"></script>
+    <div class="gcse-searchresults-only"></div> 
+<div id="contentsArea"></div>
+
+</div>
+<div class="admax-native" data-admax-id="f8524c67626ecb86c736281c42adaec0" width="500px"></div>
+<script src="https://adm.shinobi.jp/s/b21bd376364f694baff4cddf640202dc" class="ad-bottom"></script>
+<!-- admax -->
+<script src="https://adm.shinobi.jp/s/4f803927aa0a723300294e905abcc901" class="ad-bottom"></script>
+<!-- admax -->
+</body>
