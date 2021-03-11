@@ -1,0 +1,13 @@
+<form id="form1" action="#">
+    <input type="text" id="input_message" value="" size="8">
+    <input type="image" src="https://static.wixstatic.com/media/712666_6c958164fbc541bab34ab4cbb36ac87f~mv2.png" alt="検索" onclick="func1()" width="18">
+      </form>
+      <div id="output_message"></div>
+      <script language="javascript" type="text/javascript">
+      function func1() {
+        var input_message = document.getElementById("input_message").value;
+        open( "https://ja.wikipedia.org/wiki/" + input_message, "_blank") ;
+    
+        document.getElementById("output_message").innerHTML = input_message;
+      }
+</script>
