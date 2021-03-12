@@ -1,5 +1,38 @@
 <!DOCTYPE html>
 <head>
+<script>
+var apiHttps;
+apiHttps = new XMLHttpRequest();
+apiHttps.open("GET", "https://api.p2pquake.net/v1/human-readable", false);
+apiHttps.send(null);
+var log=apiHttps.responseText;
+setInterval(function(){
+    try{
+        var apiHttp;
+        apiHttp = new XMLHttpRequest();
+        apiHttp.open("GET", "https://api.p2pquake.net/v1/human-readable", false);
+        apiHttp.send(null);
+        var jsonData=apiHttp.responseText;
+    }catch(e){};
+    var Rjson=JSON.parse(apiHttp.responseText);
+    if(apiHttp.responseText != log){
+        if(Rjson[0].code==551){
+            if(Rjson[0].earthquake.maxScale > 20){
+                document.getElementById('kinkyuu').innerHTML = '<p class="blink" style="color:red;"><h1>震度3以上の地震が発生しました。地震情報は<a href="https://typhoon.yahoo.co.jp/weather/jp/earthquake/">こちら</h1></a>'
+            }else{
+                document.getElementById('kinkyuu').innerHTML = '震度3以上の地震が発生しました。地震情報は<a href="https://typhoon.yahoo.co.jp/weather/jp/earthquake/">こちら</a>
+            };
+        };
+        if(Rjson[0].code==5610){
+            document.getElementById('kinkyuu').innerHTML = '<p class="blink" style="color:red;">地震が発生しました。地震情報は<a href="https://typhoon.yahoo.co.jp/weather/jp/earthquake/">こちら</h1></a>'
+        };
+        if(Rjson[0].code==552){
+            document.getElementById('kinkyuu').innerHTML = '<p class="blink" style="color:red;"><h1>津波が発生しました。津波情報は<a href="https://typhoon.yahoo.co.jp/weather/jp/tsunami/">こちら</h1></a>
+        };
+    log=apiHttp.responseText;
+    };
+},3000);
+</script>
     <style>
 body {
   background-image: url("https://static.wixstatic.com/media/712666_7362ea4227f34a0e89b7152e229d0239~mv2.jpg");
@@ -291,6 +324,19 @@ a {
 		  top: -470px;
 		  left:505px;
 }
+.blink {
+	-webkit-animation: blink 1s ease infinite;
+	animation: blink 1s ease infinite;
+}
+@-webkit-keyframes blink {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@keyframes blink {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+	    
 	    
 /* ipadが横向き */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape){
@@ -395,6 +441,7 @@ a {
     <title>js-search ホーム</title>
 </head>
 <body>
+
 <!-- js-searchのアイコン -->
 <a href=""><img src="https://static.wixstatic.com/media/712666_6fc6fc9f91664d42bdefbe805a787e1e~mv2.png" class="js-icon" alt="js-search"></a>
 <!-- 検索バー -->
@@ -420,8 +467,7 @@ document.getElementById("output_message").innerHTML = input_message
   }
   </script>
 </div>
-<br><br>
-<a href="https://fukko.yahoo.co.jp/?fr=top_evt311_pc&cpt_n=3.11&cpt_m=search&cpt_s=pcweb"><h1>あの東日本大震災から10年。決して忘れてはいけません。</h1></a>
+<div id="kinkyuu"></div>
 <h1 class="text-google-news">google news</h1>
 <iframe src="https://9oyfubevlicuvwtvvftdtq-on.drv.tw/js/google-newsblock.html" frameborder="0" class="google-news"></iframe>
 <h1 class="text-goo-news">goo news</h1>
